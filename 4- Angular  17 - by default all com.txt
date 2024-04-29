@@ -1,0 +1,155 @@
+4- Angular  17 -> by default all components are standalone
+   --> Use them anywhere in the  applications
+   --> No need to inject in a moddule
+5- Component Data Flow
+   @Input -> Used for sending data to the component
+   @Output -> Sending data from the component    
+6- Components -> Data Binding
+   -> Class -> Template -> Class
+7- Components Lifecycle methods
+   -> Right from creation -> [8 stages] -> destory 
+
+Angular 17 -> Generate Components
+------------------------------------------------------------
+1. ng generate component <component_name>
+   -> in Angular 17 -> components are standalone by default
+   -> in previous versions -> they are NOT standalone by default
+
+2. To disable default standalone
+   ng g c <component_name> 
+
+3 But if you are on any other Angular version < 17
+   -> Entry in Module file
+         AppModule
+
+4.The components are standalone = true by default
+   -> They don't need a module
+   -> Otherwise you will get error
+
+5.Angular.json ->
+   Adding to schematics and disable standalone = false in Angular.json
+
+Angular 17 vs Angular 16 and below
+-------------------------------------------------------------
+1. Angular 16 and below used AppModule
+     -> Its mandatory to have atleast one module
+     ->AppModule
+     -> main.ts -> Bootstrap AppModule
+
+2. Angular 17 onwards
+     -> Everything is standalone
+     -> No mandatory Module is required
+     -> No AppModule anymore
+     -> But we can create our own custom modules
+     -> Is backward compatible
+        -> Everything that you were doing in Angular 16 is still valid
+
+     ->->main.tss -> Bootstrap AppComponent 
+
+Angular 17 vs Angular 16 and below -> with No AppRoutingModule
+------------------------------------------------------------------
+
+1. Angular 16 and below needed atleast 1 module
+     AppModule
+     AppRoutingModule
+ 
+    The route were defind in AppRoutingModule and imported into the AppModule 
+
+    Importing AppRoutingModule into AppModule 
+
+2. Angular 17 onwards
+     App.routes.ts -> AppRoutes.ts
+
+     AppConfig -> main.ts
+
+3. Can I still use RoutingModule in Angular 17?
+    -> Yes
+    -> Angular 17 is backwards compatible
+
+4. ng g module <module name> --routing     
+
+Episode 14 -> Standalone Components
+----------------------------------------------------
+1. ng generate component <component_name> 
+     ng g c <component_name>  --flat
+
+2. ng g c <component_name> --standalone false
+
+     you will need a module mandatory 
+     
+     ng g module <module_name>
+
+   ng g  c <component_name> --standalone false --modual=<module_naem> 
+
+Episode 15 -> How to use components
+-----------------------------------------------------------
+
+   1. ng g c <component_name>
+
+   2. by default each component will have a prefix -> app-<component_name>
+   
+   3. unique selector name
+ 
+   4. 2 step process
+	4.1 Import the component into the required component
+
+	4.2 <component_name></component_name> 
+
+   5. 
+	Cart  -> Parents
+           products  -> Child
+	      Product1
+		    Description
+		    Images
+		    Reviews
+		    Rating
+	      product2
+         payment
+	      Netbanking
+              CreditCard       
+Episode #16 -> Component Communications
+------------------------------------------------------
+
+Crew  [Parent]
+    Crew-Designations [Child] 
+
+Episode #17 -> AppModule
+------------------------------------------------------
+
+1. By default in Angular 17 - there is no AppModule
+
+2. Till Angular 16 -> it's mandatory to haev AppModule
+
+3. in Angular 17 supports modules ->
+	->we can create our own modules
+	->use just like how we were it earlier
+
+4. in Angular 17 - we are bootstraping with AppComponent with Configurations
+
+5. Till Angular 16 -> we are bootstraping with AppModule
+
+Episode #18  -> Generate Modules
+
+1. ng g module <module_name>
+
+2. ng  g c <component_name> -m users
+
+3. ng g c <component_name> -m users --standalone=false
+
+Episode #20 -> Types of Modules
+-----------------------------------------------------
+
+1. Feature Module
+     Payments
+
+     Users
+     Crew
+     Airlines
+     Invoices
+2. Shared Module
+     Header
+     Authentication
+     Authroization
+     Footer
+
+                                                                                                                                                                                                                                             
