@@ -151,5 +151,23 @@ Episode #20 -> Types of Modules
      Authentication
      Authroization
      Footer
+3. Lazy Loading Module
+    -> ondemand
+    -> Home page
+        Users
+ 
+    -> Cart / Checkout page
+        Payments
 
-                                                                                                                                                                                                                                             
+Episode #21 -> Lszy Loading Module
+--------------------------------------------------------------
+
+1. Lazy loading module will be loaded only when user goes to that route
+
+2. Generate a lazy loading module
+     ng g module <module> --routing
+3. Inside lazy loading module we can have 
+     - standalone components
+     - regular component --standalone false
+    
+                                                                                                                                                                                                                                            
